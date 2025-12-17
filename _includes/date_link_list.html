@@ -1,0 +1,68 @@
+{% comment %}
+Renders a list section with dates, separator, and links.
+This include is designed for sections like Blog Posts, Media, and Talks on the homepage,
+following the structure and class names from the reference HTML.
+
+Requires:
+title: The heading text for the section (e.g., "Blog Posts")
+items: The array or collection of items to loop through (e.g., site.posts, site.data.media)
+item_date_key: The key name for the date field within each item (e.g., 'date')
+item_title_key: The key name for the title field within each item (e.g., 'title')
+Optional:
+item_url_key: The key name for the URL field for data items (e.g., 'url'). Jekyll posts use built-in 'url'.
+date_format: Liquid date format string (e.g., "%d %b %Y"). Applied if the date value is a date object.
+limit: Maximum number of items to display from the list.
+{% endcomment %}
+
+{% assign items = include.items %}
+{% assign title = include.title %}
+{% assign item_date_key = include.item_date_key %}
+{% assign item_title_key = include.item_title_key %}
+{% assign item_url_key = include.item_url_key %}
+{% assign date_format = include.date_format | default: "%d %b %Y" %} {# Default date format if not provided #}
+{% assign limit = include.limit %}
+
+{% comment %} Apply limit if provided {% endcomment %}
+{% if limit %}
+{% assign items = items | limit: limit %}
+{% endif %}
+
+
+{% if items.size > 0 %}
+{# No wrapper div needed here, content will be inside #home in the layout #}
+<h1>{{ title }}</h1> {# Use h1 for section titles as in the reference HTML #}
+<ul class="posts"> {# Use the 'posts' class for the list #}
+    {% for item in items %}
+    <li>
+        {% assign item_date_value = item[item_date_key] %}
+        {% if item_date_value %}
+        <span class="date">
+            {# Check if the value is a date object (like from site.posts) vs a string (like from data files) #}
+            {% if item_date_value.year %} {# Simple check for date object properties #}
+            {{ item_date_value | date: date_format }}
+            {% else %} {# Assume it's a pre-formatted string from data file #}
+            {{ item_date_value }}
+            {% endif %}
+        </span>
+        {% endif %}
+
+        {% assign item_title_value = item[item_title_key] %}
+        {% assign item_url_value = item[item_url_key] %}
+
+        {# Determine the correct URL. Jekyll posts have a built-in 'url'. Data items use the specified key. #}
+        {% assign final_url = nil %}
+        {% if item.url %} {# This is true for Jekyll posts #}
+        {% assign final_url = item.url | relative_url %}
+        {% elsif item_url_value %} {# This is for data items with a 'url' field #}
+        {% assign final_url = item_url_value %}
+        {% endif %}
+
+        {% if final_url %}
+        <a href="{{ final_url }}">{{ item_title_value }}</a>
+        {% else %} {# Fallback if no URL #}
+        {{ item_title_value }}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,45 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet" />
+<title>{{ page.title | default: site.title }}</title>
+<meta
+  name="robots"
+  content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+
+{% comment %} Meta tags from the snippet {% endcomment %} {% if site.author %}
+<meta name="author" content="{{ site.author }}" />
+{% endif %} {% comment %} Use jekyll-feed standard link if plugin is enabled or
+feedburner is set {% endcomment %} {% if site.feedburner_rss %}
+<link
+  href="{{ site.feedburner_rss }}"
+  rel="alternate"
+  title="{{ site.title }}"
+  type="application/atom+xml" />
+{% elsif site.plugins contains 'jekyll-feed' %}
+<link
+  rel="alternate"
+  href="{{ '/feed.xml' | relative_url }}"
+  title="{{ site.title }}"
+  type="application/atom+xml" />
+{% endif %} {% comment %} Removed specific readability verification {%
+endcomment %} {% comment %} {% if site.readability_verification %}
+<meta
+  name="readability-verification"
+  content="{{ site.readability_verification }}" />
+{% endif %} {% endcomment %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% if site.description %}
+<meta
+  name="description"
+  content="{{ site.description | strip_html | normalize_whitespace | truncatewords: 50 | escape }}" />
+{% endif %}
+
+<link
+  rel="stylesheet"
+  href="{{ '/assets/css/style.css' | relative_url }}"
+  type="text/css"
+  media="screen, projection" />

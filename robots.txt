@@ -1,0 +1,13 @@
+# robots.txt for https://cmdlinedev.com/
+#
+# See https://www.robotstxt.org/robotstxt.html for documentation
+#
+# This configuration attempts to block all compliant web crawlers
+# from accessing any part of the site.
+
+User-agent: *
+Disallow: /
+
+# Sitemap (optional: for reference if Disallow rules are ever relaxed)
+# Since all content is disallowed, compliant crawlers won't fetch the sitemap.
+# Sitemap: https://cmdlinedev.com/feed.xml

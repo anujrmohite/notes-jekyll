@@ -1,0 +1,33 @@
+<div class="footer">
+    <div class="footer-content-wrapper clearfix">
+        <div class="contact">
+            <p>
+                {{ site.title }}
+                <br />
+                {% comment %} Removed reference to Cofounder of GitHub {% endcomment %}
+                {% comment %}
+                {% if site.email %}
+                {{ site.email }} {# Email address #}
+                {% endif %}
+                {% endcomment %}
+            </p>
+        </div>
+        <div class="contact">
+            <p>
+                {% if site.github_username %}
+                <a href="https://github.com/{{ site.github_username }}/">github.com/{{ site.github_username }}</a><br />
+                {% endif %}
+
+                {% if site.twitter_username %}
+                <a href="https://twitter.com/{{ site.twitter_username
+                    }}</a><br />
+                {% endif %}
+            </p>
+        </div>
+        <div class=" rss">
+                    {% comment %} Link to FeedBurner or internal feed based on config {% endcomment %}
+                    {% assign rss_url = site.feedburner_rss | default: '/feed.xml' %}
+                    {% comment %} Assuming you want a visible RSS link - add this if needed {% endcomment %}
+        </div>
+    </div>
+</div>

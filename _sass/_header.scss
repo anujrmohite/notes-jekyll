@@ -1,0 +1,115 @@
+/*****************************************************************************/
+/* Header Styles                                                              */
+/*****************************************************************************/
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  background: var(--glass-bg);
+  border: var(--border-width) solid var(--glass-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+  .title {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    text-align: center;
+    padding: var(--spacing-sm);
+  }
+  
+  .title .site-title {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    padding: var(--spacing-xs);
+    gap: 4px;
+    border-radius: var(--border-radius);
+  }
+  
+  .title .site-title {
+    font-size: 0.9rem;
+  }
+}
+
+/* Site Title */
+.title .site-title {
+  font-family: var(--font-family-serif);
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+  line-height: 1.2;
+}
+
+.title .site-title:hover {
+  color: var(--color-text-muted);
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 2px;
+  }
+  
+  .title a.extra {
+    padding: 2px 6px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Nav Links */
+.title a.extra {
+  position: relative;
+  color: var(--color-text-muted);
+  font-family: var(--font-family-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  padding: 4px var(--spacing-sm);
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.title a.extra:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+}
+
+.title a.extra::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-text);
+  transition: width var(--transition-fast), left var(--transition-fast);
+}
+
+.title a.extra:hover::after {
+  width: 60%;
+  left: 20%;
+}

@@ -1,0 +1,186 @@
+/*****************************************************************************/
+/* Dark Mode Styles                                                          */
+/*****************************************************************************/
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+  position: fixed;
+  bottom: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 480px) {
+  #darkModeToggle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8em;
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+}
+
+#darkModeToggle:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Dark mode toggle - when active */
+body.dark-mode #darkModeToggle {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+}
+
+/* Dark mode link overrides */
+body.dark-mode a:hover {
+  color: var(--color-primary-hover);
+}
+
+body.dark-mode a:visited {
+  color: var(--color-text-secondary);
+}
+
+/* Title in dark mode */
+body.dark-mode .title .site-title {
+  color: var(--color-text);
+}
+
+body.dark-mode .title .site-title:hover {
+  color: var(--color-text-muted);
+}
+
+body.dark-mode .title a.extra {
+  color: var(--color-text-muted);
+}
+
+body.dark-mode .title a.extra:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg-secondary);
+}
+
+/* Post list in dark mode */
+body.dark-mode .section-list ul.posts li a {
+  color: var(--color-text);
+}
+
+body.dark-mode .section-list ul.posts li a:hover {
+  color: var(--color-primary-hover);
+}
+
+body.dark-mode .section-list ul.posts li a:visited {
+  color: var(--color-text);
+}
+
+/* Post content in dark mode */
+body.dark-mode #post .meta {
+  color: var(--color-text-muted);
+}
+
+body.dark-mode #post a {
+  color: var(--color-text);
+  text-decoration-color: var(--color-border);
+}
+
+body.dark-mode #post a:hover {
+  text-decoration-color: var(--color-text);
+}
+
+body.dark-mode #post a:visited {
+  color: var(--color-text-secondary);
+}
+
+/* Code in dark mode */
+body.dark-mode #post code {
+  background-color: var(--color-code-bg);
+  border-color: var(--color-border);
+  color: var(--color-code-text);
+}
+
+body.dark-mode .highlight {
+  background-color: var(--color-code-bg);
+  border-color: var(--color-border);
+}
+
+/* Blockquote in dark mode */
+body.dark-mode #post blockquote {
+  background-color: var(--color-bg-secondary);
+  border-left-color: var(--color-text-muted);
+  color: var(--color-text-secondary);
+}
+
+/*****************************************************************************/
+/* Syntax Highlighting - Dark Mode                                           */
+/*****************************************************************************/
+
+body.dark-mode .highlight .c { color: #6a6a6a; font-style: italic; }
+body.dark-mode .highlight .err { color: #c0c0c0; background-color: #2a2a2a; }
+body.dark-mode .highlight .k { color: #c0c0c0; font-weight: bold; }
+body.dark-mode .highlight .o { color: #e0e0e0; font-weight: bold; }
+body.dark-mode .highlight .cm { color: #6a6a6a; font-style: italic; }
+body.dark-mode .highlight .cp { color: #909090; font-weight: bold; }
+body.dark-mode .highlight .c1 { color: #6a6a6a; font-style: italic; }
+body.dark-mode .highlight .cs { color: #909090; font-weight: bold; font-style: italic; }
+body.dark-mode .highlight .gd { color: #c0c0c0; background-color: #2a2020; }
+body.dark-mode .highlight .gd .x { color: #c0c0c0; background-color: #3a2020; }
+body.dark-mode .highlight .ge { font-style: italic; }
+body.dark-mode .highlight .gr { color: #d0d0d0; }
+body.dark-mode .highlight .gh { color: #909090; }
+body.dark-mode .highlight .gi { color: #c0c0c0; background-color: #203020; }
+body.dark-mode .highlight .gi .x { color: #c0c0c0; background-color: #204020; }
+body.dark-mode .highlight .go { color: #808080; }
+body.dark-mode .highlight .gp { color: #606060; }
+body.dark-mode .highlight .gs { font-weight: bold; }
+body.dark-mode .highlight .gu { color: #909090; }
+body.dark-mode .highlight .gt { color: #a0a0a0; }
+body.dark-mode .highlight .kc { color: #c0c0c0; font-weight: bold; }
+body.dark-mode .highlight .kd { color: #c0c0c0; font-weight: bold; }
+body.dark-mode .highlight .kp { color: #c0c0c0; font-weight: bold; }
+body.dark-mode .highlight .kr { color: #c0c0c0; font-weight: bold; }
+body.dark-mode .highlight .kt { color: #a0a0a0; font-weight: bold; }
+body.dark-mode .highlight .m { color: #b0b0b0; }
+body.dark-mode .highlight .s { color: #a0a0a0; }
+body.dark-mode .highlight .na { color: #909090; }
+body.dark-mode .highlight .nb { color: #909090; }
+body.dark-mode .highlight .nc { color: #a0a0a0; font-weight: bold; }
+body.dark-mode .highlight .no { color: #909090; }
+body.dark-mode .highlight .ni { color: #b0b0b0; }
+body.dark-mode .highlight .ne { color: #c0c0c0; font-weight: bold; }
+body.dark-mode .highlight .nf { color: #b0b0b0; font-weight: bold; }
+body.dark-mode .highlight .nn { color: #808080; }
+body.dark-mode .highlight .nt { color: #909090; }
+body.dark-mode .highlight .nv { color: #909090; }
+body.dark-mode .highlight .ow { font-weight: bold; color: #e0e0e0; }
+body.dark-mode .highlight .w { color: #404040; }
+body.dark-mode .highlight .mf { color: #b0b0b0; }
+body.dark-mode .highlight .mh { color: #b0b0b0; }
+body.dark-mode .highlight .mi { color: #b0b0b0; }
+body.dark-mode .highlight .mo { color: #b0b0b0; }
+body.dark-mode .highlight .sb { color: #a0a0a0; }
+body.dark-mode .highlight .sc { color: #a0a0a0; }
+body.dark-mode .highlight .sd { color: #a0a0a0; }
+body.dark-mode .highlight .s2 { color: #a0a0a0; }
+body.dark-mode .highlight .se { color: #a0a0a0; }
+body.dark-mode .highlight .sh { color: #a0a0a0; }
+body.dark-mode .highlight .si { color: #a0a0a0; }
+body.dark-mode .highlight .sx { color: #a0a0a0; }
+body.dark-mode .highlight .sr { color: #909090; }
+body.dark-mode .highlight .s1 { color: #a0a0a0; }
+body.dark-mode .highlight .ss { color: #b0b0b0; }
+body.dark-mode .highlight .bp { color: #909090; }
+body.dark-mode .highlight .vc { color: #909090; }
+body.dark-mode .highlight .vg { color: #909090; }
+body.dark-mode .highlight .vi { color: #909090; }
+body.dark-mode .highlight .il { color: #b0b0b0; }
