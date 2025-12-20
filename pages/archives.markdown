@@ -2,7 +2,7 @@
 layout: page
 title: Archives
 permalink: /archives/
-background_color: "#f8f8f8"
+background_color: "#fefce8"
 ---
 
 <div class="archive-filters" style="margin-bottom: 2rem; text-align: center;">

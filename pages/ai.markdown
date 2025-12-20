@@ -2,6 +2,7 @@
 layout: page
 title: AI
 permalink: /ai/
+background_color: "#f0fdf4"
 ---
 
 <section class="section-list">

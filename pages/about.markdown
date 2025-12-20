@@ -1,8 +1,8 @@
 ---
 layout: page
 title: About
-permalink: /ai/
-background_color: "#f0fdf4"
+permalink: /about/
+background_color: "#fafaf9"
 ---
 
 <div class="about-page">
