@@ -12,7 +12,38 @@ background_color: "#f5f5ff"
   <article class="project-card">
     <div class="project-header">
       <span class="project-year">2024</span>
-      <h3 class="project-name">Project One</h3>
+      <h3 class="project-name">Yukti - AI Linux Assistant</h3>
+    </div>
+    <p class="project-desc">Intelligent command-line tool in Rust that translates natural language queries into executable shell commands with >90% accuracy. Includes automated debugging assistant.</p>
+    <div class="project-tech">
+      <span>Rust</span>
+      <span>AI/LLM</span>
+      <span>CLI</span>
+      <span>Docker</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/anujrmohite/">Source</a>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-header">
+      <span class="project-year">2024</span>
+      <h3 class="project-name">AGL Infotainment System</h3>
+    </div>
+    <p class="project-desc">Custom Linux-based infotainment system for Automotive Grade Linux. Built with custom Yocto layers (Raspberry Pi 4) and a Qt-based UI for multimedia and settings.</p>
+    <div class="project-tech">
+      <span>Embedded Linux</span>
+      <span>Yocto</span>
+      <span>Qt</span>
+      <span>C++</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/anujrmohite/">Source</a>
+    </div>
+  </article>
+
+</div>
     </div>
     <p class="project-desc">A brief description of your first project. What problem does it solve?</p>
     <div class="project-tech">

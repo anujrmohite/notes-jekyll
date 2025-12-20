@@ -1,18 +1,18 @@
 # ==============================================================================
 # Site Settings
 # ==============================================================================
-title: Notes by Your Name
-author: Your Name
+title: Notes by Anuj Mohite
+author: Anuj Rajesh Mohite
 description: >-
-  Your tagline here.
+  Software Engineer | Backend | Compilers | Linux
 url: "https://notes-by-4c1ae5.gitlab.io"
 baseurl: ""
 
 # ==============================================================================
 # Social Settings
 # ==============================================================================
-twitter_username: yourusername
-github_username: yourusername
+twitter_username: anujrmohite
+github_username: anujrmohite
 
 # ==============================================================================
 # Build Settings
