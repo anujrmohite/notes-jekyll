@@ -19,7 +19,7 @@ github_username: yourusername
 # ==============================================================================
 markdown: kramdown
 highlighter: rouge
-permalink: /:year/:month/:day/:slug.html
+permalink: /:year/:month/:day/:slug/
 
 # ==============================================================================
 # Plugins
