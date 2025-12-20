@@ -26,6 +26,27 @@ title: { { page.title } }
 
   <div class="post-content">{{ content }}</div>
 
+  <div class="post-actions">
+    <button class="action-btn like-btn" id="likeBtn">
+      <span class="icon">♥</span> <span class="text">Like</span>
+    </button>
+    <a
+      href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}"
+      target="_blank"
+      class="action-btn share-btn twitter-btn">
+      <span class="icon">𝕏</span> <span class="text">Post</span>
+    </a>
+    <a
+      href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
+      target="_blank"
+      class="action-btn share-btn linkedin-btn">
+      <span class="icon">in</span> <span class="text">Share</span>
+    </a>
+    <button class="action-btn copy-btn" id="copyLinkBtn">
+      <span class="icon">🔗</span> <span class="text">Copy</span>
+    </button>
+  </div>
+
   {% if page.categories.size > 0 %}
   <footer class="post-footer">
     <div class="post-tags">
@@ -63,4 +84,125 @@ title: { { page.title } }
     color: var(--color-text);
     border-color: var(--color-text);
   }
+
+  /* Social Buttons */
+  .post-actions {
+    margin: 3rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    border-top: 1px solid var(--color-border);
+    padding-top: 2rem;
+  }
+
+  .action-btn {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-family: var(--font-family-serif);
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .action-btn:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+    transform: translateY(-2px);
+  }
+
+  .like-btn.liked {
+    background-color: #ffe4e6;
+    border-color: #e11d48;
+    color: #e11d48;
+  }
+
+  body.dark-mode .like-btn.liked {
+    background-color: #3f151b;
+    border-color: #fb7185;
+    color: #fb7185;
+  }
+
+  /* Hover states for share buttons */
+  .linkedin-btn:hover {
+    background-color: #0077b5;
+    border-color: #0077b5;
+    color: white !important;
+  }
+
+  .twitter-btn:hover {
+    background-color: black;
+    border-color: black;
+    color: white !important;
+  }
+
+  body.dark-mode .twitter-btn:hover {
+    background-color: white;
+    border-color: white;
+    color: black !important;
+  }
+
+  .copy-btn:hover {
+    background-color: var(--color-bg-secondary);
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // --- Like Button Logic ---
+    const likeBtn = document.getElementById("likeBtn");
+    const postId = "{{ page.url }}";
+    const storageKey = "liked_" + postId;
+
+    if (localStorage.getItem(storageKey) === "true") {
+      likeBtn.classList.add("liked");
+      likeBtn.querySelector(".text").textContent = "Liked";
+    }
+
+    likeBtn.addEventListener("click", function () {
+      if (likeBtn.classList.contains("liked")) {
+        likeBtn.classList.remove("liked");
+        likeBtn.querySelector(".text").textContent = "Like";
+        localStorage.removeItem(storageKey);
+      } else {
+        likeBtn.classList.add("liked");
+        likeBtn.querySelector(".text").textContent = "Liked";
+        localStorage.setItem(storageKey, "true");
+        // Animation
+        likeBtn.style.transform = "scale(1.2)";
+        setTimeout(() => {
+          likeBtn.style.transform = "none";
+        }, 200);
+      }
+    });
+
+    // --- Copy Link Logic ---
+    const copyBtn = document.getElementById("copyLinkBtn");
+
+    copyBtn.addEventListener("click", function () {
+      const url = window.location.href;
+      navigator.clipboard
+        .writeText(url)
+        .then(() => {
+          // Feedback
+          const originalText = copyBtn.querySelector(".text").textContent;
+          copyBtn.querySelector(".text").textContent = "Copied!";
+          copyBtn.classList.add("liked"); // Re-use liked style for feedback
+
+          setTimeout(() => {
+            copyBtn.querySelector(".text").textContent = originalText;
+            copyBtn.classList.remove("liked");
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error("Failed to copy: ", err);
+        });
+    });
+  });
+</script>
