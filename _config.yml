@@ -5,8 +5,8 @@ title: Notes by Your Name
 author: Your Name
 description: >-
   Your tagline here.
-url: "https://www.example.com"
-baseurl: ""
+url: "https://anujrmohite.gitlab.io"
+baseurl: "/notes-by"
 
 # ==============================================================================
 # Social Settings
