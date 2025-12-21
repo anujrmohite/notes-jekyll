@@ -12,12 +12,24 @@
 
 @media (max-width: 768px) {
   .site {
-    padding: var(--spacing-md) var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-md);
   }
 }
 
 @media (max-width: 480px) {
   .site {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  
+  /* Touch-friendly tap targets */
+  a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
   }
 }
