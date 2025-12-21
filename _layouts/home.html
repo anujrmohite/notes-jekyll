@@ -3,22 +3,308 @@ layout: default
 title: Notes by Anuj
 ---
 
-<section class="section-list">
-  <h2 class="section-title">Recent Posts</h2>
-  <ul class="posts">
-    {% comment %} Show only the 10 most recent posts {% endcomment %} {% for
-    post in site.posts limit: 10 %}
-    <li>
-      <span class="date">{{ post.date | date: "%d %b %Y" }}</span>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-  <div style="margin-top: 1rem">
-    <a
-      href="{{ '/archives/' | relative_url }}"
-      style="font-weight: 500; color: var(--color-primary)"
-      >View All Posts →</a
-    >
-  </div>
-</section>
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="home-hero">
+    <h1 class="home-title">Notes by Anuj</h1>
+    <p class="home-tagline">
+      Thoughts on software, systems, and everything in between.
+    </p>
+  </section>
+
+  <!-- Recent Posts -->
+  <section class="recent-section">
+    <h2 class="section-heading">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      Recent Posts
+    </h2>
+
+    <ul class="home-posts">
+      {% for post in site.posts limit: 10 %}
+      <li class="home-post-item">
+        <div class="post-date-badge">
+          <span class="date-num">{{ post.date | date: "%d" }}</span>
+          <span class="date-mon">{{ post.date | date: "%b" }}</span>
+        </div>
+        <div class="post-info">
+          <a href="{{ post.url | relative_url }}" class="post-link"
+            >{{ post.title }}</a
+          >
+          <div class="post-cats">
+            {% for cat in post.categories %}
+            <span class="cat-chip">{{ cat }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <svg
+          class="post-chevron"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <div class="view-all-wrapper">
+      <a href="{{ '/archives/' | relative_url }}" class="view-all-link">
+        <span>View All Posts</span>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+</div>
+
+<style>
+  /* ===== Home Page Styles ===== */
+  .home-page {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ===== Hero Section ===== */
+  .home-hero {
+    text-align: center;
+    padding: 2rem 1rem 2.5rem;
+    margin-bottom: 2rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+  }
+
+  .home-title {
+    font-family: var(--font-family-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .home-tagline {
+    font-family: var(--font-family-serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* ===== Section Heading ===== */
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-family-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .section-heading svg {
+    color: var(--color-text-muted);
+  }
+
+  /* ===== Posts List ===== */
+  .home-posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .home-post-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    transition: all var(--transition-fast);
+  }
+
+  .home-post-item:hover {
+    border-color: var(--color-text-muted);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .post-date-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 42px;
+    padding: 0.4rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+  }
+
+  .date-num {
+    font-family: var(--font-family-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .date-mon {
+    font-family: var(--font-family-mono);
+    font-size: 0.6rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+  }
+
+  .post-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .post-link {
+    display: block;
+    font-family: var(--font-family-serif);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none !important;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+    transition: color var(--transition-fast);
+  }
+
+  .home-post-item:hover .post-link {
+    color: var(--color-primary-hover);
+  }
+
+  .post-cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .cat-chip {
+    font-family: var(--font-family-mono);
+    font-size: 0.65rem;
+    padding: 0.1rem 0.45rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    color: var(--color-text-muted);
+  }
+
+  .post-chevron {
+    color: var(--color-border);
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+  }
+
+  .home-post-item:hover .post-chevron {
+    color: var(--color-text);
+    transform: translateX(2px);
+  }
+
+  /* ===== View All Link ===== */
+  .view-all-wrapper {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-family: var(--font-family-mono);
+    font-size: 0.85rem;
+    color: var(--color-text);
+    text-decoration: none !important;
+    transition: all var(--transition-fast);
+  }
+
+  .view-all-link:hover {
+    background: var(--color-bg-tertiary);
+    border-color: var(--color-text-muted);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .view-all-link svg {
+    opacity: 0.7;
+    transition: all var(--transition-fast);
+  }
+
+  .view-all-link:hover svg {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .home-hero {
+      padding: 1.5rem 1rem;
+    }
+
+    .home-title {
+      font-size: 1.5rem;
+    }
+
+    .home-tagline {
+      font-size: 1rem;
+    }
+
+    .home-post-item {
+      padding: 0.875rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .post-chevron {
+      display: none;
+    }
+
+    .post-cats {
+      display: none;
+    }
+
+    .post-date-badge {
+      min-width: 38px;
+    }
+  }
+</style>
