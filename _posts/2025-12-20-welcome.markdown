@@ -5,6 +5,8 @@ date: 2025-12-20 20:00:00 +0530
 categories: [general]
 ---
 
-Welcome to my new blog! I'm Anuj, a Software Engineer passionate about backend systems, compilers, and Linux.
+Welcome to my new blog! I'm Anuj.
 
-Stay tuned for posts about my projects and what I'm learning.
+I finally configured this site. I promise not to break production here (mostly).
+
+Stay tuned for posts about Backend Systems, Linux, and possibly some rants about Anything.

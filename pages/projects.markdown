@@ -11,6 +11,23 @@ background_color: "#f5f5ff"
 
   <article class="project-card">
     <div class="project-header">
+      <span class="project-year">2025</span>
+      <h3 class="project-name">Cartograph</h3>
+    </div>
+    <p class="project-desc">AI-powered learning map generator. Visualizes complex topics as structured, collapsible knowledge trees using Google Gemini API.</p>
+    <div class="project-tech">
+      <span>React</span>
+      <span>FastAPI</span>
+      <span>TailwindCSS</span>
+      <span>Gemini API</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/anujrmohite/cartograph">Source</a>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-header">
       <span class="project-year">2024</span>
       <h3 class="project-name">Yukti - AI Linux Assistant</h3>
     </div>
@@ -40,51 +57,6 @@ background_color: "#f5f5ff"
     </div>
     <div class="project-links">
       <a href="https://github.com/anujrmohite/">Source</a>
-    </div>
-  </article>
-
-</div>
-    </div>
-    <p class="project-desc">A brief description of your first project. What problem does it solve?</p>
-    <div class="project-tech">
-      <span>Tech</span>
-      <span>Stack</span>
-      <span>Here</span>
-    </div>
-    <div class="project-links">
-      <a href="#">Demo</a>
-      <a href="#">Source</a>
-    </div>
-  </article>
-
-  <article class="project-card">
-    <div class="project-header">
-      <span class="project-year">2023</span>
-      <h3 class="project-name">Project Two</h3>
-    </div>
-    <p class="project-desc">Another project description. Keep it short and impactful.</p>
-    <div class="project-tech">
-      <span>Python</span>
-      <span>FastAPI</span>
-    </div>
-    <div class="project-links">
-      <a href="#">Docs</a>
-      <a href="#">Source</a>
-    </div>
-  </article>
-
-  <article class="project-card">
-    <div class="project-header">
-      <span class="project-year">2023</span>
-      <h3 class="project-name">Project Three</h3>
-    </div>
-    <p class="project-desc">Describe your third project here.</p>
-    <div class="project-tech">
-      <span>Rust</span>
-      <span>Redis</span>
-    </div>
-    <div class="project-links">
-      <a href="#">Source</a>
     </div>
   </article>
 

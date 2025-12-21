@@ -144,14 +144,14 @@ background_color: "#fafaf9"
 }
 
 .hero-tagline {
-  font-family: "Caveat", cursive;
+   font-family: var(--font-family-serif);
   font-size: 1.5rem;
   color: var(--color-text-muted);
   margin: 0;
 }
 
 .about-intro {
-  font-family: "Caveat", cursive;
+   font-family: var(--font-family-serif);
   font-size: 1.5rem;
   line-height: 1.6;
   text-align: center;
@@ -184,10 +184,6 @@ background_color: "#fafaf9"
   letter-spacing: 0.05em;
 }
 
-.about-card p {
-   font-family: "Caveat", cursive;
-   font-size: 1.3rem;
-}
 
 .exp-item {
   margin-bottom: 2.5rem;
