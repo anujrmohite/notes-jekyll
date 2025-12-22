@@ -46,6 +46,14 @@ background_color: "#fefce8"
         </svg>
         Opinions
       </button>
+      <button class="filter-pill" data-filter="general">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        General
+      </button>
       <button class="filter-pill" data-filter="photography">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
@@ -206,10 +214,21 @@ background_color: "#fefce8"
 }
 
 .post-card:hover {
-  border-color: var(--color-text-muted);
   transform: translateX(4px);
   box-shadow: var(--shadow-sm);
 }
+
+/* Unique hover colors for each tile */
+.post-card:nth-child(1):hover { border-color: #f472b6; background: linear-gradient(90deg, rgba(244, 114, 182, 0.1), transparent); }
+.post-card:nth-child(2):hover { border-color: #fb923c; background: linear-gradient(90deg, rgba(251, 146, 60, 0.1), transparent); }
+.post-card:nth-child(3):hover { border-color: #facc15; background: linear-gradient(90deg, rgba(250, 204, 21, 0.1), transparent); }
+.post-card:nth-child(4):hover { border-color: #4ade80; background: linear-gradient(90deg, rgba(74, 222, 128, 0.1), transparent); }
+.post-card:nth-child(5):hover { border-color: #22d3ee; background: linear-gradient(90deg, rgba(34, 211, 238, 0.1), transparent); }
+.post-card:nth-child(6):hover { border-color: #60a5fa; background: linear-gradient(90deg, rgba(96, 165, 250, 0.1), transparent); }
+.post-card:nth-child(7):hover { border-color: #a78bfa; background: linear-gradient(90deg, rgba(167, 139, 250, 0.1), transparent); }
+.post-card:nth-child(8):hover { border-color: #e879f9; background: linear-gradient(90deg, rgba(232, 121, 249, 0.1), transparent); }
+.post-card:nth-child(9):hover { border-color: #f87171; background: linear-gradient(90deg, rgba(248, 113, 113, 0.1), transparent); }
+.post-card:nth-child(10):hover { border-color: #34d399; background: linear-gradient(90deg, rgba(52, 211, 153, 0.1), transparent); }
 
 .post-card.hidden {
   display: none !important;

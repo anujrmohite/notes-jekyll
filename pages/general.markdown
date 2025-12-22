@@ -1,0 +1,58 @@
+---
+layout: page
+title: General
+permalink: /general/
+background_color: "#f5f9ff"
+---
+
+<div class="category-page">
+
+  <div class="category-header">
+    <div class="category-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+    </div>
+    <p class="category-intro">Miscellaneous posts, updates, and everyday discoveries.</p>
+  </div>
+
+  <ul class="category-posts">
+    {% assign post_count = 0 %}
+    {% for post in site.posts %}
+      {% if post.categories contains 'general' %}
+        {% if post_count < 10 %}
+        <li class="category-post-item">
+          <div class="post-date-card">
+            <span class="date-day">{{ post.date | date: "%d" }}</span>
+            <span class="date-month">{{ post.date | date: "%b" }}</span>
+          </div>
+          <div class="post-details">
+            <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
+          </div>
+          <svg class="post-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </li>
+        {% assign post_count = post_count | plus: 1 %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div class="category-footer">
+    <a href="{{ '/archives/' | relative_url }}" class="archives-link">
+      <span>View all in Archives</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </div>
+
+</div>
+
+<style>
+{% include category-page-styles.html %}
+</style>
