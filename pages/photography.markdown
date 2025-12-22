@@ -8,12 +8,7 @@ background_color: "#f5f8ff"
 <div class="category-page">
 
   <div class="category-header">
-    <div class="category-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-        <circle cx="12" cy="13" r="4"></circle>
-      </svg>
-    </div>
+    <h1 class="category-title">Photography</h1>
     <p class="category-intro">Capturing moments through my lens.</p>
   </div>
 
@@ -54,4 +49,16 @@ background_color: "#f5f8ff"
 
 <style>
 {% include category-page-styles.html %}
+.category-header {
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.65)),
+    url('/notes-by/assets/images/photography-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+body.dark-mode .category-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)),
+    url('/notes-by/assets/images/photography-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
 </style>

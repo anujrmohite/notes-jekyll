@@ -8,11 +8,7 @@ background_color: "#fffef5"
 <div class="category-page">
 
   <div class="category-header">
-    <div class="category-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-      </svg>
-    </div>
+    <h1 class="category-title">Opinions</h1>
     <p class="category-intro">Thoughts, reflections, and random tangents.</p>
   </div>
 
@@ -53,4 +49,16 @@ background_color: "#fffef5"
 
 <style>
 {% include category-page-styles.html %}
+.category-header {
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.65)),
+    url('/notes-by/assets/images/opinions-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+body.dark-mode .category-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)),
+    url('/notes-by/assets/images/opinions-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
 </style>

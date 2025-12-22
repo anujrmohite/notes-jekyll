@@ -3,6 +3,24 @@ layout: default
 ---
 
 <div id="page">
-    <h1 class="page-title">{{ page.title }}</h1>
-    {{ content }}
+  <h1 class="page-title">{{ page.title }}</h1>
+  {{ content }}
 </div>
+
+<style>
+  /* Hide duplicate title when page has category-header */
+  .category-page .page-title,
+  .projects-page .page-title,
+  .archives-page .page-title,
+  .about-page .page-title {
+    display: none !important;
+  }
+
+  /* Move page-title hiding to parent */
+  #page:has(.category-page) > .page-title,
+  #page:has(.projects-page) > .page-title,
+  #page:has(.archives-page) > .page-title,
+  #page:has(.about-page) > .page-title {
+    display: none !important;
+  }
+</style>

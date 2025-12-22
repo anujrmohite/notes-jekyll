@@ -8,18 +8,7 @@ background_color: "#fff5f5"
 <div class="category-page">
 
   <div class="category-header">
-    <div class="category-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-        <line x1="7" y1="2" x2="7" y2="22"></line>
-        <line x1="17" y1="2" x2="17" y2="22"></line>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <line x1="2" y1="7" x2="7" y2="7"></line>
-        <line x1="2" y1="17" x2="7" y2="17"></line>
-        <line x1="17" y1="17" x2="22" y2="17"></line>
-        <line x1="17" y1="7" x2="22" y2="7"></line>
-      </svg>
-    </div>
+    <h1 class="category-title">Movies</h1>
     <p class="category-intro">Films I've watched, loved, or found thought-provoking.</p>
   </div>
 
@@ -60,4 +49,16 @@ background_color: "#fff5f5"
 
 <style>
 {% include category-page-styles.html %}
+.category-header {
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.65)),
+    url('/notes-by/assets/images/movies-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+body.dark-mode .category-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)),
+    url('/notes-by/assets/images/movies-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
 </style>

@@ -8,7 +8,9 @@ background_color: "#fefce8"
 <div class="archives-page">
 
   <div class="archives-header">
+    <h1 class="category-title">Archives</h1>
     <p class="archives-intro">Browse all posts by category or explore the complete archive.</p>
+  </div>
     
     <div class="filter-container">
       <button class="filter-pill active" data-filter="all">
@@ -75,7 +77,6 @@ background_color: "#fefce8"
         Movies
       </button>
     </div>
-  </div>
 
   <div class="posts-container">
     <ul class="posts-list" id="archives-list">
@@ -125,15 +126,38 @@ background_color: "#fefce8"
 
 /* ===== Header & Intro ===== */
 .archives-header {
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
   margin-bottom: 2rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.65)),
+    url('/notes-by/assets/images/classic-computer-bg.png');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+body.dark-mode .archives-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)),
+    url('/notes-by/assets/images/classic-computer-bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.category-title {
+  font-family: var(--font-family-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
 }
 
 .archives-intro {
   font-family: var(--font-family-serif);
   font-size: 1.1rem;
-  text-align: center;
-  color: var(--color-text-secondary);
-  margin: 0 0 1.5rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 /* ===== Filter Pills ===== */
@@ -143,9 +167,21 @@ background_color: "#fefce8"
   gap: 0.5rem;
   justify-content: center;
   padding: 1rem;
-  background: var(--color-bg-secondary);
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.65)),
+    url('/notes-by/assets/images/classic-computer-bg.png');
+  background-size: cover;
+  background-position: center;
   border: 1px solid var(--color-border);
   border-radius: 12px;
+}
+
+body.dark-mode .filter-container {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)),
+    url('/notes-by/assets/images/classic-computer-bg.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .filter-pill {

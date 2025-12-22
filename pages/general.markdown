@@ -8,13 +8,7 @@ background_color: "#f5f9ff"
 <div class="category-page">
 
   <div class="category-header">
-    <div class="category-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="12" y1="16" x2="12" y2="12"></line>
-        <line x1="12" y1="8" x2="12.01" y2="8"></line>
-      </svg>
-    </div>
+    <h1 class="category-title">General</h1>
     <p class="category-intro">Miscellaneous posts, updates, and everyday discoveries.</p>
   </div>
 
@@ -55,4 +49,16 @@ background_color: "#f5f9ff"
 
 <style>
 {% include category-page-styles.html %}
+.category-header {
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.65)),
+    url('/notes-by/assets/images/classic-computer-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+body.dark-mode .category-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)),
+    url('/notes-by/assets/images/classic-computer-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
 </style>

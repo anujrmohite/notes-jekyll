@@ -8,11 +8,7 @@ background_color: "#f5f5ff"
 <div class="projects-page">
 
   <div class="category-header">
-    <div class="category-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-      </svg>
-    </div>
+    <h1 class="category-title">Projects</h1>
     <p class="category-intro">Things I've built, tinkered with, or contributed to - from AI tools to embedded systems.</p>
   </div>
 
@@ -142,33 +138,37 @@ background_color: "#f5f5ff"
 }
 
 .category-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
   margin-bottom: 2rem;
-  background: var(--color-bg-secondary);
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.65)),
+    url('/notes-by/assets/images/classic-computer-bg.png');
+  background-size: cover;
+  background-position: center;
   border: 1px solid var(--color-border);
   border-radius: 12px;
 }
 
-.category-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  color: var(--color-text-muted);
-  flex-shrink: 0;
+body.dark-mode .category-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)),
+    url('/notes-by/assets/images/classic-computer-bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.category-title {
+  font-family: var(--font-family-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
 }
 
 .category-intro {
   font-family: var(--font-family-serif);
   font-size: 1.1rem;
-  color: var(--color-text-secondary);
+  font-style: italic;
+  color: var(--color-text-muted);
   margin: 0;
   line-height: 1.5;
 }

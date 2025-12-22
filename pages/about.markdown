@@ -186,6 +186,22 @@ background_color: "#fafaf9"
 /* ===== About Page Styles ===== */
 .about-page {
   animation: fadeInUp 0.6s ease-out;
+  padding: 2rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.9)),
+    url('/notes-by/assets/images/classic-computer-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+body.dark-mode .about-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)),
+    url('/notes-by/assets/images/classic-computer-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 @keyframes fadeInUp {

@@ -26,6 +26,11 @@ body {
 
 body {
   background-color: var(--color-bg);
+  background-image: url('/notes-by/assets/images/superhero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
   color: var(--color-text);
   font-family: var(--font-family-sans);
   font-size: var(--font-size-base);

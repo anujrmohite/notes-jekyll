@@ -8,12 +8,7 @@ background_color: "#f5fff5"
 <div class="category-page">
 
   <div class="category-header">
-    <div class="category-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <polyline points="16 18 22 12 16 6"></polyline>
-        <polyline points="8 6 2 12 8 18"></polyline>
-      </svg>
-    </div>
+    <h1 class="category-title">Programming & Systems</h1>
     <p class="category-intro">Notes on software development, system design, and artificial intelligence.</p>
   </div>
 
@@ -59,4 +54,16 @@ background_color: "#f5fff5"
 
 <style>
 {% include category-page-styles.html %}
+.category-header {
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.65)),
+    url('/notes-by/assets/images/programming-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+body.dark-mode .category-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)),
+    url('/notes-by/assets/images/programming-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
 </style>
