@@ -18,10 +18,24 @@
   </head>
 
   <body>
+    <script>
+      (function () {
+        var theme = localStorage.getItem("theme");
+        var systemDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (theme === "dark" || (!theme && systemDark)) {
+          document.body.classList.add("dark-mode");
+        }
+      })();
+    </script>
+    <button id="meteorToggle" title="Toggle meteor shower"></button>
+    <button id="snowToggle" title="Toggle snow effect"></button>
     <button id="darkModeToggle"></button>
     <div class="site">{% include title.html %} {{ content }}</div>
     {% include footer.html %}
     <script src="{{ '/assets/js/darkmode.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/snow.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/meteors.js' | relative_url }}"></script>
   </body>
 </html>

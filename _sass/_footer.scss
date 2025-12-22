@@ -2,11 +2,56 @@
 /* Footer Styles                                                              */
 /*****************************************************************************/
 
+
 .footer {
   border-top: 1px solid var(--color-border);
   padding: var(--spacing-xl) 0;
   margin-top: auto;
-  background-color: var(--color-bg);
+  
+  /* Mountains Light Background */
+  background-image: url('/notes-by/assets/images/mountains-footer-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-bg-secondary); /* Fallback */
+}
+
+/* Revert text colors */
+.footer .contact, 
+.footer .contact a {
+  color: var(--color-text-muted) !important;
+}
+
+.footer .contact a:hover {
+  color: var(--color-text) !important;
+  text-shadow: none;
+}
+
+.footer-content-wrapper {
+  background: rgba(255, 255, 255, 0.4) !important;
+  border: var(--border-width) solid var(--glass-border) !important;
+  color: var(--color-text) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Adjust for dark mode */
+body.dark-mode .footer {
+  background-image: url('/notes-by/assets/images/sea-footer-bg-dark.png');
+  filter: none;
+}
+
+body.dark-mode .footer-content-wrapper {
+   background: rgba(0, 0, 0, 0.4) !important;
+   color: var(--color-text) !important;
+   border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .footer .contact,
+body.dark-mode .footer .contact a {
+    color: var(--color-text-muted) !important;
+}
+
+body.dark-mode .footer .contact a:hover {
+    color: var(--color-text) !important;
 }
 
 .footer-content-wrapper {
